@@ -93,9 +93,3 @@ python app.py
 ```
 
 By following these steps, you'll have the AlphaBI Sales Bot project set up locally on your machine, ready for development and testing.Happy coding!
-
-```
-
-
-
-```
