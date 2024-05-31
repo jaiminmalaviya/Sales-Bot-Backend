@@ -1,0 +1,1308 @@
+{
+	"info": {
+		"_postman_id": "47aae2fc-0846-4f1c-ad15-afbd9d46e5e1",
+		"name": "SalesBot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32560582"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Get all clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/api/client/company?limit=4&skip=1&account=Amo",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"client",
+								"company"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "4"
+								},
+								{
+									"key": "skip",
+									"value": "1"
+								},
+								{
+									"key": "account",
+									"value": "Amo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\":\"Test Client II\",\n    \"company_website\":\"https://test.co.in\",\n    \"sales_owner\":\"Bhagya Patel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/client/company",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"client",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiJmMDY3NDUyZS00YjBjLTRjYjYtYmRhMy1jM2U4YTZjYmMzMTIiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZGU5YmZkNGMtZDIwMi00ZjZiLWIyOWEtMmJjNjA1N2IwYWZiL3YyLjAiLCJpYXQiOjE2OTE5ODQ0NTAsIm5iZiI6MTY5MTk4NDQ1MCwiZXhwIjoxNjkxOTg4MzUwLCJhaW8iOiJBU1FBMi84VUFBQUFQblJjczhxMVQxZU0ra2FrbHN2RUwxelNUdGd1SlJmMTh0MjFxU2E2ZGxFPSIsImF6cCI6ImYwNjc0NTJlLTRiMGMtNGNiNi1iZGEzLWMzZThhNmNiYzMxMiIsImF6cGFjciI6IjEiLCJvaWQiOiIyZGI4MjZmNC05NTM0LTQ1NzgtYWI1Zi1mMjY0MTAyODI2MTUiLCJyaCI6IjAuQVVvQVRQMmIzZ0xTYTAteW1pdkdCWHNLLXk1RlpfQU1TN1pNdmFQRDZLYkx3eEtKQUFBLiIsInN1YiI6IjJkYjgyNmY0LTk1MzQtNDU3OC1hYjVmLWYyNjQxMDI4MjYxNSIsInRpZCI6ImRlOWJmZDRjLWQyMDItNGY2Yi1iMjlhLTJiYzYwNTdiMGFmYiIsInV0aSI6IjNUSm9qTFJNUVUtR3RvV0Nwc0Z4QUEiLCJ2ZXIiOiIyLjAifQ.GZ4zCNiVxnu7v221SbMkA9yVXo5L6XukOrwdBSjdavz5k9cULC9zK-oNuhVgoE6nQKwZlcqITcC8kkg3J07T0x2BREsYRDmNsFjT78k04bbPOPystiXTSNmz76kab9_E1a39T74oOHkfVPaFwV_DvIrMfRIaKTmpCgrlERuHiv0MXyddwgQS0W49CCmUWkf_F0nhYYv8BJi59jc9hyrwceaYTxgTmV2D593drFvTP3is4KqT8NegJfy3dtvCanGPMfhkakG_3J2WEff8atR7XAaiBiIoWoDZEZOEf-3c7h112BVaKzAnJ64N-I2m7NzZtAXnfevmh10yG2L24ssrsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\":\"\",\n    \"company_website\":\"\",\n    \"pages\":[\"https://alphabi.co\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/client/company/65b8e26983faeff165aedb8f",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"client",
+								"company",
+								"65b8e26983faeff165aedb8f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/api/client/company/65bb23050d048b3a0abf958c",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"client",
+								"company",
+								"65bb23050d048b3a0abf958c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/api/client/company/65c05f85125d1a05c186c728",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"client",
+								"company",
+								"65c05f85125d1a05c186c728"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"linkedIn\":\"\",\n    \"contact_first_name\":\"\",\n    \"contact_last_name\":\"\",\n    \"company_id\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/client/contact/add",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"client",
+								"contact",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add contact Form",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2NWM0YjkxOWUzNjU0NmE4ZmNjZGMzMWYiLCJleHAiOjE3MDg2MDA5NDMsImlhdCI6MTcwNzk5NjE0M30.mY2L1ib8_rzztsfnp9L7ByDXnAtR8g13zM2Rq035uAc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "linkedIn",
+									"value": "https://dhsjdad.com",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "malaviya",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "jaimin",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "65c061dce8c8e0e90445411d",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/knightt/Desktop/albi/AlphaBI-Sales-bot-API/uploads/content/jaimin.html"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{port}}/api/client/contact/add",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"client",
+								"contact",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Pages",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\":\"65c05f85125d1a05c186c728\",\n    \"pages\":\"https://supernovaenergy.solar/faq/\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/client/company/page",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"client",
+								"company",
+								"page"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/api/client/contact/add",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"client",
+								"contact",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get company by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cases",
+			"item": [
+				{
+					"name": "Get all case studies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/case/get-case",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"case",
+								"get-case"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add case",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Widget Wonders",
+									"type": "text"
+								},
+								{
+									"key": "keywords",
+									"value": "Sales, Consultancy",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/knightt/Desktop/albi/AlphaBI-Sales-bot-API/uploads/case-study.md"
+								},
+								{
+									"key": "file",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/case/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"case",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Case",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/case/delete/65b20433f83b5ceb07142b61",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"case",
+								"delete",
+								"65b20433f83b5ceb07142b61"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Query",
+			"item": [
+				{
+					"name": "Query for docs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/query/docs?q=Contact details of Alphabi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"docs"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Contact details of Alphabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query for response",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"q\": \"What does the Drinklevity do? Which industry can it be classified in?\",\n    \"filters\": {\n        \"client\": {\n            \"$eq\": \n                \"Drinklevity\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/query/ask",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Icebreaker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\":\"Barley Bean\",\n    \"client_name\": \"Chirag Parmar\",\n    \"sales_owner\": \"Bhagya Patel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/query/icebreaker",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"icebreaker"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "samples",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\":\"supernova\",\n    \"client_name\": \"Jack Black\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/query/sample",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"sample"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rate Icebreaker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icebreaker_id\": \"65c5b01cce38bf99202349e5\",\n    \"sales_owner\": \"Senil Mendapara\",\n    \"value\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/query/icebreaker/feedback",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"icebreaker",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Icebreakers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/api/query/icebreaker?account=Barley Bean",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"icebreaker"
+							],
+							"query": [
+								{
+									"key": "account",
+									"value": "Barley Bean"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Singup",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "secret",
+									"value": "txhF0kg24o1AXsvGwRZ7T0-b7fpwztBrfrqipWpm9i8",
+									"type": "string"
+								},
+								{
+									"key": "payload",
+									"value": "{\n    \"_id\":\"65b89a675ad4c2714fee7df9\"\n}",
+									"type": "string"
+								},
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Name\",\n    \"email\": \"new@mail.com\",\n    \"password\": \"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Freshsales",
+			"item": [
+				{
+					"name": "Get Account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token token=g9WmgJAvtTPZd48SkRK6-w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://alphabisolutionspvtltd.myfreshworks.com/crm/sales/api/sales_accounts/402002991579",
+							"protocol": "https",
+							"host": [
+								"alphabisolutionspvtltd",
+								"myfreshworks",
+								"com"
+							],
+							"path": [
+								"crm",
+								"sales",
+								"api",
+								"sales_accounts",
+								"402002991579"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token token=g9WmgJAvtTPZd48SkRK6-w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sales_account\": {\n        \"name\":\"Ninja Hattori\",\n        \"city\": \"Sample city\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://alphabisolutionspvtltd.myfreshworks.com/crm/sales/api/sales_accounts/",
+							"protocol": "https",
+							"host": [
+								"alphabisolutionspvtltd",
+								"myfreshworks",
+								"com"
+							],
+							"path": [
+								"crm",
+								"sales",
+								"api",
+								"sales_accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token token=g9WmgJAvtTPZd48SkRK6-w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sales_account\": {\n        \"website\":\"https://one.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://alphabisolutionspvtltd.myfreshworks.com/crm/sales/api/sales_accounts/402002991511",
+							"protocol": "https",
+							"host": [
+								"alphabisolutionspvtltd",
+								"myfreshworks",
+								"com"
+							],
+							"path": [
+								"crm",
+								"sales",
+								"api",
+								"sales_accounts",
+								"402002991511"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token token=g9WmgJAvtTPZd48SkRK6-w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contact\": {\n        \"_id\": {\n            \"$oid\": \"65bc95db3934b4ca8d688a95\"\n        },\n        \"first_name\": \"Jack\",\n        \"last_name\": \"DaCat\",\n        \"account\": {\n            \"$oid\": \"65bc7b4f3934b4ca8d688a75\"\n        },\n        \"linkedIn\": \"https: //www.linkedin.com/in/bhagya-patel-27290b2b1/\",\n        \"company_name\": \"Oggy\",\n        \"mobile_number\": \"4638164109\",\n        \"linkedin\": \"/bhagya-patel-27290b2b1/\",\n        \"sales_account\": {\n            \"name\": \"Oggy\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://alphabisolutionspvtltd.myfreshworks.com/crm/sales/api/contacts",
+							"protocol": "https",
+							"host": [
+								"alphabisolutionspvtltd",
+								"myfreshworks",
+								"com"
+							],
+							"path": [
+								"crm",
+								"sales",
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contact",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token token=g9WmgJAvtTPZd48SkRK6-w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contact\":{\n        \"first_name\": \"John\",\n        \"last_name\":\"Doe\",\n        \"email\":\"doejohn@mail.com\",\n        \"sales_account\":[\n            {\n                \"name\":\"John ka account\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://alphabisolutionspvtltd.myfreshworks.com/crm/sales/api/contacts/402047882963",
+							"protocol": "https",
+							"host": [
+								"alphabisolutionspvtltd",
+								"myfreshworks",
+								"com"
+							],
+							"path": [
+								"crm",
+								"sales",
+								"api",
+								"contacts",
+								"402047882963"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Owners",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token token=g9WmgJAvtTPZd48SkRK6-w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contact\":{\n        \"first_name\": \"John\",\n        \"last_name\":\"Doe\",\n        \"email\":\"doejohn@mail.com\",\n        \"sales_account\":[\n            {\n                \"name\":\"John ka account\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://alphabisolutionspvtltd.myfreshworks.com/crm/sales/api/selector/owners",
+							"protocol": "https",
+							"host": [
+								"alphabisolutionspvtltd",
+								"myfreshworks",
+								"com"
+							],
+							"path": [
+								"crm",
+								"sales",
+								"api",
+								"selector",
+								"owners"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "List users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/api/user/list",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "Start Chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ice_breaker\":\"Hi Matt,I hope this message finds you well. I wanted to reach out to you regarding AlphaBI's expertise in digital transformation. Based on our past work with companies in your field, we have successfully helped them grow their audience and drive more customers through organic content. I would love to chat with you about how AlphaBI can support Barley Bean's digital transformation goals. Looking forward to connecting!Best regards, [Your Name]\",\r\n  \"client_name\":\"Matt\",\r\n  \"company_name\":\"Barley Bean\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/chat",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"chat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_message\":\"Are you willing to work with us? just make sure that answer is of 100 words\",\r\n    \"company_name\":\"Barley Bean\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/chat/65d334e78e4a5477c1030667",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"65d334e78e4a5477c1030667"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Messages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/chat/65d318c42f419d6c475935e5?skip=0",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"65d318c42f419d6c475935e5"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rate message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":\"-1\",\r\n    \"message\":\"At AlphaBI, we can help Barley Bean enhance its digital presence through targeted marketing strategies, data analytics, and technology solutions to drive customer engagement and increase online orders. Let's discuss how we can support your digital transformation goals further.\",\r\n    \"user_id\":\"65c4b919e36546a8fccdc31f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/chat/65d3350a8e4a5477c103099c/rate",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"65d3350a8e4a5477c103099c",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "strapi",
+			"item": [
+				{
+					"name": "Get Blogs KULA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://kula-strapi-dev-app-lotqt.ondigitalocean.app/api/blogs?populate=writtenBy,Body&fields[0]=blogTitle&fields[1]=blogDescription&fields[2]=summary&fields[3]=blogSlug&fields[4]=updatedAt&filters[updatedAt][$gt]=2024-01-25T06:06:39.289Z",
+							"protocol": "https",
+							"host": [
+								"kula-strapi-dev-app-lotqt",
+								"ondigitalocean",
+								"app"
+							],
+							"path": [
+								"api",
+								"blogs"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "writtenBy,Body"
+								},
+								{
+									"key": "fields[0]",
+									"value": "blogTitle"
+								},
+								{
+									"key": "fields[1]",
+									"value": "blogDescription"
+								},
+								{
+									"key": "fields[2]",
+									"value": "summary"
+								},
+								{
+									"key": "fields[3]",
+									"value": "blogSlug"
+								},
+								{
+									"key": "fields[4]",
+									"value": "updatedAt"
+								},
+								{
+									"key": "filters[updatedAt][$gt]",
+									"value": "2024-01-25T06:06:39.289Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Blogs AlphaBI's",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://lobster-app-qktb6.ondigitalocean.app/api/blogs?populate=writtenBy,Body&fields[0]=Title&fields[1]=Tagline&fields[2]=slug&fields[3]=updatedAt&sort=updatedAt:desc",
+							"protocol": "https",
+							"host": [
+								"lobster-app-qktb6",
+								"ondigitalocean",
+								"app"
+							],
+							"path": [
+								"api",
+								"blogs"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "writtenBy,Body"
+								},
+								{
+									"key": "fields[0]",
+									"value": "Title"
+								},
+								{
+									"key": "fields[1]",
+									"value": "Tagline"
+								},
+								{
+									"key": "fields[2]",
+									"value": "slug"
+								},
+								{
+									"key": "fields[3]",
+									"value": "updatedAt"
+								},
+								{
+									"key": "sort",
+									"value": "updatedAt:desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{port}}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://alphabi-sales-bot-api-development.up.railway.app/api/blog",
+							"protocol": "https",
+							"host": [
+								"alphabi-sales-bot-api-development",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"blog"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "Generate with data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "keywords",
+									"value": "Generative AI",
+									"type": "text"
+								},
+								{
+									"key": "instruction",
+									"value": "Add  a question at the end to spark the conversation in the comment",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "65c4b919e36546a8fccdc31f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{port}}/api/post/data",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"post",
+								"data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate with ai",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "keywords",
+									"value": "bottles",
+									"type": "text"
+								},
+								{
+									"key": "industry",
+									"value": "plastic",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "65c4b919e36546a8fccdc31f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{port}}/api/post/ai",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"post",
+								"ai"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rate Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"65dc173b3a17a0343b2d346b\",\r\n    \"post_content\":\"new o\",\r\n    \"sales_owner\":\"senil\",\r\n    \"sales_owner_id\":\"65cf2ba1b2c65054b90f4105\",\r\n    \"value\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/api/post",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Post",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "http://127.0.0.1:5001",
+			"type": "string"
+		}
+	]
+}

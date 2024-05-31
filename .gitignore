@@ -1,0 +1,13 @@
+__pycache__/
+.env
+.idea/
+.venv
+
+/uploads/account_md
+/uploads/in-html
+/uploads/cookies.json
+
+
+/uploads/last_logged_in.txt
+
+.vscode
