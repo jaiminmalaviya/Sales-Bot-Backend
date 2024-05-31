@@ -3,7 +3,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders.text import TextLoader
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
 from langchain_openai import OpenAIEmbeddings
-from pinecone import Pinecone, PodSpec
+from pinecone import Pinecone, ServerlessSpec
 from helpers.custom_error import CustomEmbedError
 import os
 from enum import Enum
@@ -55,8 +55,13 @@ def embed_text(content: str, file_type: str, client_name: str, document_metadata
         # index_name = client_name
         
         if index_name not in [idx.name for idx in pc.list_indexes()]:
-            pc.create_index(name=index_name, metric="cosine", dimension=1536,
-                            spec=PodSpec(environment=os.getenv("PINECONE_ENV")))
+            pc.create_index(name=index_name, 
+                            metric="cosine", 
+                            dimension=1536, 
+                            spec=ServerlessSpec(
+                                cloud=os.getenv("PINECONE_CLOUD"), 
+                                region=os.getenv("PINECONE_REGION"))
+                            )
 
         idx = pc.Index(index_name)
         embeddings = OpenAIEmbeddings()

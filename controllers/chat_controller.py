@@ -10,7 +10,7 @@ import os
 from helpers.helper import parse_json
 from bson.objectid import ObjectId
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import PineconeVectorStore as PineconeLC
+from langchain_community.vectorstores import Pinecone as PineconeLC
 from helpers.helper import extract_data_from_context
 from pymongo import ReturnDocument
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -109,10 +109,11 @@ def send_message(chat_id):
             # taking context from the pinecone
             embeddings = OpenAIEmbeddings()
             vectorstore = PineconeLC.from_existing_index("sales-bot", embeddings)
-            retriever = vectorstore.as_retriever(search_type='similarity',
-                                                 search_kwargs={
-                                                     'k': 10
-                                                 }, )
+            retriever = vectorstore.as_retriever(
+                            search_type='similarity',
+                            search_kwargs={'k': 10}, 
+                        )
+            
 
             search_results = retriever.invoke(f"Find the details about the {company_name}. As well as find services of AlphaBI and past works.")
 

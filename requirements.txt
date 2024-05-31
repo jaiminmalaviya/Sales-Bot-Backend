@@ -14,7 +14,7 @@ langchain-openai==0.0.8
 langchain-pinecone==0.0.3
 Markdown==3.5.2
 pillow==10.2.0
-pinecone-client==3.1.0
+pinecone-client==3.2.2
 playwright==1.42.0
 pymongo==4.6.2
 pyjwt==2.8.0
