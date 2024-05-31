@@ -1,16 +1,15 @@
 # Use an official Ubuntu image as a parent image
-FROM amd64/ubuntu:latest
+FROM ubuntu:jammy
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
-
-# Set timezone
 ENV TZ=Asia/Kolkata
 
+# Update packages
+RUN apt-get update && apt-get -y upgrade
+
 # Update packages and install necessary dependencies
-RUN apt-get update && \
-    apt-get install -y python3.10 python3-pip chromium-browser chromium-driver && \
-    apt-get clean
+RUN apt-get install -y python3.10 python3-pip && apt-get clean
 
 # Set the working directory in the container
 WORKDIR /app
@@ -19,16 +18,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --break-system-packages -r requirements.txt
-RUN playwright install
-RUN playwright install-deps
-RUN apt-get install -y wget
-RUN apt install chromium-browser
-
-RUN apt-get install -y wget
-RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
-
+RUN pip install -r requirements.txt
 
 # Copy the rest of the application code to the container
 COPY . .

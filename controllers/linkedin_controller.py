@@ -8,7 +8,7 @@ from pymongo import ReturnDocument
 from langchain.memory import ChatMessageHistory
 from helpers.helper import parse_json
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import Pinecone as PineconeLC
+from langchain_community.vectorstores import PineconeVectorStore as PineconeLC
 from helpers.helper import extract_data_from_context
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder

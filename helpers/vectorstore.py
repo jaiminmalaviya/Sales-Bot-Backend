@@ -1,4 +1,4 @@
-from langchain_pinecone import Pinecone as PineconeLC
+from langchain_pinecone import PineconeVectorStore as PineconeLC
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders.text import TextLoader
 from langchain_community.document_loaders import UnstructuredMarkdownLoader

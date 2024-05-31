@@ -6,7 +6,7 @@ from db import db
 from dotenv import load_dotenv
 import os
 
-from langchain_community.vectorstores import Pinecone as PineconeLC
+from langchain_community.vectorstores import PineconeVectorStore as PineconeLC
 from langchain_openai import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate

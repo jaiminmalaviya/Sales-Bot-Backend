@@ -18,23 +18,8 @@ from email.mime.text import MIMEText
 
 load_dotenv()
 
-CURRENT_PHASE = os.getenv("CURRENT_PHASE")
-
-frontend_phase_urls = {
-    'development': os.getenv("FRONTEND_DEVELOPMENT_URL"),
-    'staging': os.getenv("FRONTEND_STAGING_URL"),
-    'production': os.getenv("FRONTEND_PRODUCTION_URL"),
-}
-
-backend_phase_urls = {
-    'development': os.getenv("BACKEND_DEVELOPMENT_URL"),
-    'staging': os.getenv("BACKEND_STAGING_URL"),
-    'production': os.getenv("BACKEND_PRODUCTION_URL"),
-}
-
-backend_url = backend_phase_urls.get(CURRENT_PHASE, 'https://alphabi-sales-bot-api-production.up.railway.app')
-frontend_url = frontend_phase_urls.get(CURRENT_PHASE, 'https://salesbot.alphabi.co')
-
+backend_url = os.getenv("FRONTEND_URL")
+frontend_url = os.getenv("BACKEND_URL")
 
 # set value 1 for local development
 # os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
