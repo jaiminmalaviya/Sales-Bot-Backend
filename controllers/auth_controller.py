@@ -18,8 +18,8 @@ from email.mime.text import MIMEText
 
 load_dotenv()
 
-backend_url = os.getenv("FRONTEND_URL")
-frontend_url = os.getenv("BACKEND_URL")
+frontend_url = os.getenv("FRONTEND_URL")
+backend_url = os.getenv("BACKEND_URL")
 
 # set value 1 for local development
 # os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
